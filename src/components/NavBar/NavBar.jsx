@@ -38,10 +38,10 @@ const NavBar = () => {
         <Link to="/my-toys">My Toys</Link>
         <Link to="/add-toy"> Add A Toy</Link>
         <Link to="/blogs">Blogs</Link>
-        <button className="py-3 px-5 text-black font-semibold md:ml-60 bg-white rounded-3xl hover:shadow-xl hover:bg-secondary duration-300">
+        <Link to='/login' className="py-3 px-5 text-black font-semibold md:ml-60 bg-white rounded-3xl hover:shadow-xl hover:bg-secondary duration-300">
           <FontAwesomeIcon className="mr-2" icon={faArrowRightToBracket} />
           Login
-        </button>
+        </Link>
       </div>
     </div>
   );
