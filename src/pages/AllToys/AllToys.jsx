@@ -57,12 +57,15 @@ const AllToys = () => {
                 <td>{toy.category}</td>
                 <td>{toy.price}</td>
                 <td>{toy.availableQuantity}</td>
-                <Link to={`/toy/${toy._id}`}
-                  className="py-2 mt-2 px-5 text-white font-semibold bg-primary 
+                <td>
+                  <Link to={`/toy/${toy._id}`}
+                  className="py-2 px-5 text-white font-semibold bg-primary 
                 rounded-3xl hover:shadow-xl hover:bg-green-950 duration-300"
                 >
                   Details
                 </Link>
+                </td>
+                
               </tr>
             ))}
           </tbody>

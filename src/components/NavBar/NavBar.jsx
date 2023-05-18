@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import logo from "../../assets/logo.png";
 import {
   faArrowRightToBracket,
@@ -7,9 +7,18 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import { authContext } from "../../context/AuthProvider";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
+
+  const { user, logOut } = useContext(authContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catch((err) => console.error(err));
+  };
 
   return (
     <div className="flex relative items-center justify-between px-6 md:px-16 bg-primary">
@@ -35,13 +44,37 @@ const NavBar = () => {
       >
         <Link to="/">Home</Link>
         <Link to="/all-toys">All Toys</Link>
-        <Link to="/my-toys">My Toys</Link>
-        <Link to="/add-toy"> Add A Toy</Link>
+
+        {user ? (
+          <div className="flex gap-10">
+            <Link to="/my-toys">My Toys</Link>
+            <Link to="/add-toy"> Add A Toy</Link>
+          </div>
+        ) : (
+          ""
+        )}
+
         <Link to="/blogs">Blogs</Link>
-        <Link to='/login' className="py-3 px-5 text-black font-semibold md:ml-60 bg-white rounded-3xl hover:shadow-xl hover:bg-secondary duration-300">
-          <FontAwesomeIcon className="mr-2" icon={faArrowRightToBracket} />
-          Login
-        </Link>
+
+        {user ? (
+          <div className="flex gap-3">
+            <img
+              className="w-[60px] md:ml-60 rounded-[50%]"
+              title={user?.displayName}
+              src={user?.photoURL}
+              alt=""
+            />
+            <button onClick={handleLogOut}>Log Out</button>
+          </div>
+        ) : (
+          <Link
+            to="/login"
+            className="py-3 px-5 text-black font-semibold md:ml-[400px] bg-white rounded-3xl hover:shadow-xl hover:bg-secondary duration-300"
+          >
+            <FontAwesomeIcon className="mr-2" icon={faArrowRightToBracket} />
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );

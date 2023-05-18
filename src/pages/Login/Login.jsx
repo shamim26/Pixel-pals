@@ -1,7 +1,43 @@
-import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { authContext } from "../../context/AuthProvider";
 
 const Login = () => {
+  const { loginUser, googleSignIn } = useContext(authContext);
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    loginUser(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        setError("");
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        const errMsg = err.message;
+        setError(errMsg);
+      });
+  };
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((user) => {
+        setError("");
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        setError(err.message);
+      });
+  };
+
   return (
     <div
       className="bg-primary text-white border-t
@@ -9,7 +45,7 @@ const Login = () => {
      h-screen pt-20"
     >
       <h2 className="text-center text-4xl font-custom font-bold leading-[50px]">
-        Get more things done <br /> with this platform.
+        Get more things done <br /> with PixelPals.
       </h2>
       <div className="text-center mt-8 space-x-4">
         <NavLink
@@ -27,19 +63,22 @@ const Login = () => {
           Register
         </NavLink>
       </div>
-      <form className=" flex flex-col gap-5 items-center mt-7">
+      <form onSubmit={handleLogin} className=" flex flex-col gap-5 items-center mt-7">
         <input
           type="email"
           name="email"
           placeholder="Email"
+          required
           className="input bg-emerald-700 rounded-3xl text-white w-full max-w-xs"
         />
         <input
           type="password"
           name="password"
+          required
           placeholder="Password"
           className="input bg-emerald-700 rounded-3xl text-white w-full max-w-xs"
         />
+        <small className="text-red-500">{error}</small>
         <button
           className="py-1 px-5 bg-white rounded-3xl
            text-black font-semibold hover:shadow-xl
@@ -50,7 +89,13 @@ const Login = () => {
         </button>
         <div>
           <small>
-            Or login with <Link className="underline font-medium">Google</Link>
+            Or login with{" "}
+            <Link
+              onClick={handleGoogleSignIn}
+              className="underline font-medium"
+            >
+              Google
+            </Link>
           </small>
         </div>
       </form>
