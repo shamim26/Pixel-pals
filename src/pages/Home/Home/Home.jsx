@@ -1,16 +1,24 @@
 import React from "react";
 // import NavBar from '../../../components/NavBar/NavBar';
 import car from "../../../assets/car.png";
+import Gallery from "../Gallery/Gallery";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 const Home = () => {
   return (
     <div>
-        {/* hero */}
+      {/* hero */}
       <div
         className="flex items-center justify-center gap-10 bg-primary border-t border-gray-500
      h-screen px-16"
       >
-        <div className="text-white space-y-5">
+        <div
+          data-aos="fade-right"
+          data-aos-duration="2000"
+          className="text-white space-y-5"
+        >
           <h1 className="text-5xl font-custom font-bold leading-[130%]">
             Embark on an Epic
             <br /> Adventure through <br /> thePixelPals
@@ -25,7 +33,7 @@ const Home = () => {
             Shop now
           </button>
         </div>
-        <div className="">
+        <div data-aos="fade-up" data-aos-duration="2000">
           <img className="w-[700px]" src={car} alt="" />
         </div>
       </div>
@@ -36,6 +44,10 @@ const Home = () => {
           d="M0,96L80,90.7C160,85,320,75,480,101.3C640,128,800,192,960,202.7C1120,213,1280,171,1360,149.3L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
         ></path>
       </svg>
+      {/* gallery */}
+      <div className="my-12 mx-auto w-10/12">
+        <Gallery />
+      </div>
     </div>
   );
 };
