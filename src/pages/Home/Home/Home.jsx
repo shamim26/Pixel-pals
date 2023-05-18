@@ -2,6 +2,7 @@ import React from "react";
 // import NavBar from '../../../components/NavBar/NavBar';
 import car from "../../../assets/car.png";
 import Gallery from "../Gallery/Gallery";
+import Categories from "../Categories/Categories";
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
@@ -21,7 +22,7 @@ const Home = () => {
         >
           <h1 className="text-5xl font-custom font-bold leading-[130%]">
             Embark on an Epic
-            <br /> Adventure through <br /> thePixelPals
+            <br /> Adventure through <br /> the PixelPals
             <br /> Universe!
           </h1>
           <p className="text-slate-300">
@@ -47,6 +48,10 @@ const Home = () => {
       {/* gallery */}
       <div className="my-12 mx-auto w-10/12">
         <Gallery />
+      </div>
+      {/* categories */}
+      <div className="mb-10 mx-auto w-10/12">
+        <Categories />
       </div>
     </div>
   );
