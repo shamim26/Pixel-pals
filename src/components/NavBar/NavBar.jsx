@@ -49,7 +49,7 @@ const NavBar = () => {
         <Link to="/blogs">Blogs</Link>
 
         {user ? (
-          <div className="flex gap-3">
+          <div className=" flex gap-3">
             <img
               className="w-[60px] md:ml-60 rounded-[30px]"
               title={user?.displayName}
