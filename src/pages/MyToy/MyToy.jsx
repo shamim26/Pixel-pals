@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { authContext } from "../../context/AuthProvider";
 import UpdateModal from "../../components/UpdateModal/UpdateModal";
 import { Toaster, toast } from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const MyToy = () => {
   const { user } = useContext(authContext);
@@ -15,6 +16,7 @@ const MyToy = () => {
       .then((data) => setToys(data));
   }, [user, toys]);
 
+  //   update toys
   const handleUpdate = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -22,12 +24,12 @@ const MyToy = () => {
     const availableQuantity = form.availableQuantity.value;
     const id = form.id.value;
     const description = form.description.value;
-    const order ={
-        price,
-        id,
-        availableQuantity,
-        description
-    }
+    const order = {
+      price,
+      id,
+      availableQuantity,
+      description,
+    };
     console.log(order);
     fetch(`http://localhost:5100/updateToys/${id}`, {
       method: "PUT",
@@ -36,11 +38,35 @@ const MyToy = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.modifiedCount>0) {
-            toast.success('Updated successfully.')
-            form.reset()
+        if (data.modifiedCount > 0) {
+          toast.success("Updated successfully.");
+          form.reset();
         }
       });
+  };
+
+  //   delete toys
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5100/myToys/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+
+            Swal.fire("Deleted!", "Your toy has been deleted.", "success");
+          });
+      }
+    });
   };
 
   return (
@@ -91,6 +117,7 @@ const MyToy = () => {
                 </td>
                 <td>
                   <button
+                    onClick={() => handleDelete(toy._id)}
                     className="py-2 px-5 text-white font-semibold bg-primary 
                 rounded-3xl hover:shadow-xl hover:bg-green-950 duration-300"
                   >
@@ -102,7 +129,7 @@ const MyToy = () => {
           </tbody>
         </table>
       </div>
-      <Toaster/>
+      <Toaster />
     </div>
   );
 };
