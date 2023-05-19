@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { authContext } from "../context/AuthProvider";
 import { Navigate, useLocation } from "react-router-dom";
 import { CircularProgress } from "@mui/material";
@@ -18,6 +18,7 @@ const PrivateRoutes = ({ children }) => {
   if (user) {
     return children;
   }
+
   return <Navigate state={{ from: location }} to="/login" replace></Navigate>;
 };
 
