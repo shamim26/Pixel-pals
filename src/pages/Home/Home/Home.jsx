@@ -46,11 +46,11 @@ const Home = () => {
         ></path>
       </svg>
       {/* gallery */}
-      <div className="my-12 mx-auto w-10/12">
+      <div className="container my-12 mx-auto w-10/12">
         <Gallery />
       </div>
       {/* categories */}
-      <div className="mb-10 mx-auto w-10/12">
+      <div className="mb-10 container mx-auto w-10/12">
         <Categories />
       </div>
     </div>
