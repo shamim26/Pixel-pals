@@ -22,7 +22,7 @@ const Toy = ({ toy }) => {
       </div>
       <div className=" card-body space-y-5 ">
         <h3 className="card-title">{toyName}</h3>
-        <p className="flex justify-between font-medium">
+        <p className="flex justify-between font-medium">    
           <span>{price}</span>
           <span>
             <FontAwesomeIcon className="text-yellow-300" icon={faStar} />{" "}

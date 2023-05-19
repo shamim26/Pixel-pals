@@ -44,16 +44,8 @@ const NavBar = () => {
       >
         <Link to="/">Home</Link>
         <Link to="/all-toys">All Toys</Link>
-
-        {user ? (
-          <div className="flex gap-10">
-            <Link to="/my-toys">My Toys</Link>
-            <Link to="/add-toy"> Add A Toy</Link>
-          </div>
-        ) : (
-          ""
-        )}
-
+        <Link to="/my-toys">My Toys</Link>
+        <Link to="/add-toy"> Add A Toy</Link>
         <Link to="/blogs">Blogs</Link>
 
         {user ? (
@@ -69,7 +61,7 @@ const NavBar = () => {
         ) : (
           <Link
             to="/login"
-            className="py-3 px-5 text-black font-semibold md:ml-[400px] bg-white rounded-3xl hover:shadow-xl hover:bg-secondary duration-300"
+            className="py-3 px-5 text-black font-semibold md:ml-60 bg-white rounded-3xl hover:shadow-xl hover:bg-secondary duration-300"
           >
             <FontAwesomeIcon className="mr-2" icon={faArrowRightToBracket} />
             Login
