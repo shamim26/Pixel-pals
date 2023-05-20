@@ -15,7 +15,7 @@ const SingleToy = () => {
     availableQuantity,
   } = data;
   return (
-    <div className="flex justify-center gap-20 w-10/12 mx-auto my-10">
+    <div className="flex justify-center gap-20 w-10/12 mx-auto my-10 h-screen">
       <div className="mt-10">
         <img className="w-[500px] rounded-xl" src={picture} alt="" />
       </div>

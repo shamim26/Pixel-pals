@@ -1,8 +1,10 @@
 import { TableCell, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import useTitle from "../../hook/useTitle";
 
 const AllToys = () => {
+  useTitle('All Toys')
   const data = useLoaderData();
   const [searchText, setSearchText] = useState("");
   const [toys, setToys] = useState(data);

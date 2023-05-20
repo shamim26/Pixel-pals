@@ -3,8 +3,10 @@ import { authContext } from "../../context/AuthProvider";
 import UpdateModal from "../../components/UpdateModal/UpdateModal";
 import { Toaster, toast } from "react-hot-toast";
 import Swal from "sweetalert2";
+import useTitle from "../../hook/useTitle";
 
 const MyToy = () => {
+  useTitle('My Toys')
   const { user } = useContext(authContext);
   const [showModal, setShowModal] = useState(false);
   const [toys, setToys] = useState([]);

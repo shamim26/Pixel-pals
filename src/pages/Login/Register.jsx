@@ -1,8 +1,10 @@
 import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { authContext } from "../../context/AuthProvider";
+import useTitle from "../../hook/useTitle";
 
 const Register = () => {
+  useTitle('Register')
   const { registerUser, addUserInfo } = useContext(authContext);
   const [check, setCheck] = useState("");
 

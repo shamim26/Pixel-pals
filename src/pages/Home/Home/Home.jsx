@@ -7,9 +7,11 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import About from "../About/About";
 import Extra from "../Extra/Extra";
+import useTitle from "../../../hook/useTitle";
 AOS.init();
 
 const Home = () => {
+  useTitle('Home')
   return (
     <div>
       {/* hero */}
