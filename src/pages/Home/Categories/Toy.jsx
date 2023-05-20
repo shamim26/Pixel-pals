@@ -4,6 +4,9 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { authContext } from "../../../context/AuthProvider";
 import { Toaster, toast } from "react-hot-toast";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 const Toy = ({ toy }) => {
   const { user } = useContext(authContext);
@@ -12,7 +15,11 @@ const Toy = ({ toy }) => {
   const toastMsg = () => toast.error("Please login first!");
 
   return (
-    <div className=" bg-white h-[450px] relative rounded-3xl">
+    <div
+      data-aos="fade-right"
+      data-aos-duration="1000"
+      className=" bg-white h-[450px] relative rounded-3xl"
+    >
       <div className="pt-8">
         <img
           className="w-[250px] h-[200px] mx-auto rounded-xl"
@@ -22,7 +29,7 @@ const Toy = ({ toy }) => {
       </div>
       <div className=" card-body space-y-5 ">
         <h3 className="card-title">{toyName}</h3>
-        <p className="flex justify-between font-medium">    
+        <p className="flex justify-between font-medium">
           <span>{price}</span>
           <span>
             <FontAwesomeIcon className="text-yellow-300" icon={faStar} />{" "}

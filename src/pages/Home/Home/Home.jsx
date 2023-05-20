@@ -6,6 +6,7 @@ import Categories from "../Categories/Categories";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import About from "../About/About";
+import Extra from "../Extra/Extra";
 AOS.init();
 
 const Home = () => {
@@ -47,18 +48,23 @@ const Home = () => {
         ></path>
       </svg>
 
-      {/* gallery */}
-      <div className="container my-12 mx-auto w-10/12">
-        <Gallery />
-      </div>
-
       {/* categories */}
-      <div className="mb-10 container mx-auto w-10/12">
+      <div className="my-16 container mx-auto w-10/12">
         <Categories />
       </div>
 
+      {/* gallery */}
+      <div className="container my-32 mx-auto w-10/12">
+        <Gallery />
+      </div>
+
+      {/* extra */}
+      <div className="my-28">
+        <Extra />
+      </div>
+
       {/* About */}
-      <div className="container my-20 mx-auto w-10/12">
+      <div className="container my-24 mx-auto w-10/12">
         <About />
       </div>
     </div>

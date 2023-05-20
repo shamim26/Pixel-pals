@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Toy from "./Toy";
 
+
 const Categories = () => {
   const [active, setActive] = useState("retro");
   const [toys, setToys] = useState([]);
