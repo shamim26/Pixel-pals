@@ -22,7 +22,7 @@ const Home = () => {
         <div
           data-aos="fade-right"
           data-aos-duration="2000"
-          className="text-white text-center space-y-5"
+          className="text-white text-center md:text-left space-y-5"
         >
           <h1 className="text-4xl md:text-5xl font-custom font-bold leading-[130%]">
             Embark on an Epic
