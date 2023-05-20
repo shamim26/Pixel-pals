@@ -22,7 +22,7 @@ const router = createBrowserRouter([
       {
         path: "all-toys",
         element: <AllToys />,
-        loader: () => fetch("http://localhost:5100/toys"),
+        loader: () => fetch("https://pixel-pals-server.vercel.app/toys"),
       },
       {
         path: "toy/:id",
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5100/toys/${params.id}`),
+          fetch(`https://pixel-pals-server.vercel.app/toys/${params.id}`),
       },
       {
         path: "my-toys",

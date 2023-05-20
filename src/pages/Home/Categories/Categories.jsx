@@ -6,7 +6,7 @@ const Categories = () => {
   const [toys, setToys] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5100/toysByCategory/${active}`)
+    fetch(`https://pixel-pals-server.vercel.app/toysByCategory/${active}`)
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -47,7 +47,7 @@ const Categories = () => {
         </div>
         {/* card */}
         <div
-          className="container mx-auto w-11/12 bg-orange-50 rounded-xl
+          className="container mx-auto bg-orange-50 rounded-xl
          grid grid-cols-3 gap-8 mt-10 p-10"
         >
           {toys.map((toy) => (

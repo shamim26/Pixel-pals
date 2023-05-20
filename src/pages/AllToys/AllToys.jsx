@@ -8,7 +8,7 @@ const AllToys = () => {
   const [toys, setToys] = useState(data);
 
   const handleSearch = () => {
-    fetch(`http://localhost:5100/getToys/${searchText}`)
+    fetch(`https://pixel-pals-server.vercel.app/getToys/${searchText}`)
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -58,14 +58,14 @@ const AllToys = () => {
                 <td>{toy.price}</td>
                 <td>{toy.availableQuantity}</td>
                 <td>
-                  <Link to={`/toy/${toy._id}`}
-                  className="py-2 px-5 text-white font-semibold bg-primary 
+                  <Link
+                    to={`/toy/${toy._id}`}
+                    className="py-2 px-5 text-white font-semibold bg-primary 
                 rounded-3xl hover:shadow-xl hover:bg-green-950 duration-300"
-                >
-                  Details
-                </Link>
+                  >
+                    Details
+                  </Link>
                 </td>
-                
               </tr>
             ))}
           </tbody>

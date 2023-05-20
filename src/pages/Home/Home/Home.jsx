@@ -5,10 +5,10 @@ import Gallery from "../Gallery/Gallery";
 import Categories from "../Categories/Categories";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import About from "../About/About";
 AOS.init();
 
 const Home = () => {
-
   return (
     <div>
       {/* hero */}
@@ -46,13 +46,20 @@ const Home = () => {
           d="M0,96L80,90.7C160,85,320,75,480,101.3C640,128,800,192,960,202.7C1120,213,1280,171,1360,149.3L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
         ></path>
       </svg>
+
       {/* gallery */}
       <div className="container my-12 mx-auto w-10/12">
         <Gallery />
       </div>
+
       {/* categories */}
       <div className="mb-10 container mx-auto w-10/12">
         <Categories />
+      </div>
+
+      {/* About */}
+      <div className="container my-20 mx-auto w-10/12">
+        <About />
       </div>
     </div>
   );

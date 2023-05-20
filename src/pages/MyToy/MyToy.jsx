@@ -9,12 +9,16 @@ const MyToy = () => {
   const [showModal, setShowModal] = useState(false);
   const [toys, setToys] = useState([]);
   const [selectedToy, setSelectedToy] = useState({});
+  const [tab, setTab] = useState(1);
 
+  //   get user toys by email
   useEffect(() => {
-    fetch(`http://localhost:5100/myToys/${user?.email}`)
+    fetch(
+      `https://pixel-pals-server.vercel.app/myToys?email=${user?.email}&param=${tab}`
+    )
       .then((res) => res.json())
       .then((data) => setToys(data));
-  }, [user, toys]);
+  }, [user, toys, tab]);
 
   //   update toys
   const handleUpdate = (e) => {
@@ -31,7 +35,7 @@ const MyToy = () => {
       description,
     };
     console.log(order);
-    fetch(`http://localhost:5100/updateToys/${id}`, {
+    fetch(`https://pixel-pals-server.vercel.app/updateToys/${id}`, {
       method: "PUT",
       headers: { "content-Type": "application/json" },
       body: JSON.stringify(order),
@@ -56,7 +60,7 @@ const MyToy = () => {
       confirmButtonText: "Yes",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5100/myToys/${id}`, {
+        fetch(`https://pixel-pals-server.vercel.app/myToys/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -75,6 +79,28 @@ const MyToy = () => {
         my Toys
       </h1>
       <div>
+        <div
+          className="text-center w-[230px]
+         rounded-3xl ml-auto py-1
+          border-2 border-primary my-4"
+        >
+          <button
+            onClick={() => setTab(1)}
+            className={` font-medium py-1 px-3 mr-3 transition-all duration-300 ${
+              tab === 1 ? "bg-primary text-white rounded-3xl" : ""
+            }`}
+          >
+            Low price
+          </button>
+          <button
+            onClick={() => setTab(-1)}
+            className={` font-medium py-1 px-3 transition-all duration-300  ${
+              tab === -1 ? "bg-primary text-white rounded-3xl" : ""
+            }`}
+          >
+            High price
+          </button>
+        </div>
         <table className="table w-full">
           <thead>
             <tr>

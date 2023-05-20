@@ -8,7 +8,7 @@ const AddToy = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    fetch(`http://localhost:5100/post-toy`, {
+    fetch(`https://pixel-pals-server.vercel.app/post-toy`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -34,12 +34,14 @@ const AddToy = () => {
             className="bg-emerald-700 rounded-3xl text-white   input w-[500px] "
             placeholder="Toy Name"
             type="text"
+            required
           />
           <input
             {...register("sellerName")}
             className="bg-emerald-700 rounded-3xl text-white input w-[500px]"
             placeholder="Seller Name"
             type="text"
+            required
             defaultValue={user?.displayName}
           />
           <input
@@ -47,6 +49,7 @@ const AddToy = () => {
             className="bg-emerald-700 rounded-3xl text-white input w-[500px]"
             placeholder="Seller Email"
             type="email"
+            required
             defaultValue={user?.email}
           />
           <input
@@ -54,6 +57,7 @@ const AddToy = () => {
             className="bg-emerald-700 rounded-3xl text-white input w-[500px]"
             placeholder="price"
             type="text"
+            required
             defaultValue="$"
           />
           <input
@@ -61,18 +65,21 @@ const AddToy = () => {
             className="bg-emerald-700 rounded-3xl text-white input w-[500px]"
             placeholder="Ratings"
             type="text"
+            required
           />
           <input
             {...register("availableQuantity")}
             className="bg-emerald-700 rounded-3xl text-white input w-[500px]"
             placeholder="Quantity"
             type="number"
+            required
           />
           <input
             {...register("description")}
             className="bg-emerald-700 rounded-3xl text-white input w-[500px]"
             placeholder="Description"
             type="text"
+            required
           />
           <select
             className="select bg-emerald-700 rounded-3xl w-[500px]"
@@ -92,6 +99,7 @@ const AddToy = () => {
             className="bg-emerald-700 rounded-3xl text-white input w-[90%] mt-6"
             placeholder="Toy Image URL"
             type="url"
+            required
           />
         </div>
         <input
@@ -102,7 +110,7 @@ const AddToy = () => {
           value="Add"
         />
       </form>
-      <Toaster/>
+      <Toaster />
     </div>
   );
 };

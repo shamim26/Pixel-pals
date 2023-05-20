@@ -51,7 +51,7 @@ const NavBar = () => {
         {user ? (
           <div className=" flex gap-3">
             <img
-              className="w-[60px] md:ml-60 rounded-[30px]"
+              className="w-[50px] h-[50px] md:ml-60 rounded-[30px]"
               title={user?.displayName}
               src={user?.photoURL}
               alt=""
