@@ -1,6 +1,6 @@
 import React from "react";
 // import NavBar from '../../../components/NavBar/NavBar';
-import car from "../../../assets/car.png";
+import banner from "../../../assets/banner.png";
 import Gallery from "../Gallery/Gallery";
 import Categories from "../Categories/Categories";
 import AOS from "aos";
@@ -14,7 +14,7 @@ const Home = () => {
     <div>
       {/* hero */}
       <div
-        className="flex items-center justify-center gap-10 bg-primary border-t border-gray-500
+        className="flex items-center justify-center gap-14 bg-primary border-t border-gray-500
      h-screen px-16"
       >
         <div
@@ -37,7 +37,7 @@ const Home = () => {
           </button>
         </div>
         <div data-aos="fade-up" data-aos-duration="2000">
-          <img className="w-[700px]" src={car} alt="" />
+          <img className="w-[700px]" src={banner} alt="" />
         </div>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 250">

@@ -1,6 +1,5 @@
 import React from "react";
 import img1 from "../../../assets/gallery/gallery(1).jpg";
-import img2 from "../../../assets/gallery/gallery.jpg";
 import img3 from "../../../assets/gallery/gallery(3).jpg";
 import img4 from "../../../assets/gallery/gallery(4).jpg";
 import AOS from "aos";
