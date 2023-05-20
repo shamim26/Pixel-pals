@@ -2,9 +2,10 @@ import React, { useContext, useState } from "react";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { authContext } from "../../context/AuthProvider";
 import useTitle from "../../hook/useTitle";
+import { Toaster, toast } from "react-hot-toast";
 
 const Login = () => {
-  useTitle('Login')
+  useTitle("Login");
   const { loginUser, googleSignIn } = useContext(authContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ const Login = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         setError("");
+        toast.success("Login successful.");
         navigate(from, { replace: true });
       })
       .catch((err) => {
@@ -33,6 +35,7 @@ const Login = () => {
     googleSignIn()
       .then((user) => {
         setError("");
+        toast.success("Login successful.");
         navigate(from, { replace: true });
       })
       .catch((err) => {
@@ -65,7 +68,10 @@ const Login = () => {
           Register
         </NavLink>
       </div>
-      <form onSubmit={handleLogin} className=" flex flex-col gap-5 items-center mt-7">
+      <form
+        onSubmit={handleLogin}
+        className=" flex flex-col gap-5 items-center mt-7"
+      >
         <input
           type="email"
           name="email"
@@ -101,6 +107,7 @@ const Login = () => {
           </small>
         </div>
       </form>
+      <Toaster />
     </div>
   );
 };

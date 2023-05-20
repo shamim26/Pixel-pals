@@ -13,7 +13,7 @@ const Gallery = () => {
         Recent Photoshots
       </h1>
       <p></p>
-      <div className="flex items-center  gap-5">
+      <div className="flex md:flex-row flex-col items-center  gap-5">
         <img
           data-aos="fade-up"
           data-aos-duration="1000"

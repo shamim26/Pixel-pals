@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { authContext } from "../../context/AuthProvider";
 import useTitle from "../../hook/useTitle";
+import { Toaster, toast } from "react-hot-toast";
 
 const Register = () => {
   useTitle('Register')
@@ -20,7 +21,7 @@ const Register = () => {
       .then((result) => {
         const newUser = result.user;
         addUserInfo(name, imageUrl);
-        console.log(newUser);
+        toast.success('Registration successful.')
         setCheck("");
       })
       .catch((err) => setCheck(err.message));
@@ -101,6 +102,7 @@ const Register = () => {
           </div>
         </form>
       </div>
+      <Toaster/>
     </div>
   );
 };

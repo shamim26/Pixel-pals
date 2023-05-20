@@ -12,7 +12,7 @@ const Extra = () => {
       style={{ backgroundImage: `url(${bg})` }}
     >
       <div className="text-white flex justify-around items-center pt-8">
-        <div data-aos="fade-right" data-aos-duration="1000">
+        <div className="pl-4 pt-5 md:p-0" data-aos="fade-right" data-aos-duration="1000">
           <h1 className="text-4xl font-custom font-bold mb-5">
             Experience Unparalleled <br /> Service at PixelPals
           </h1>
@@ -28,7 +28,7 @@ const Extra = () => {
         <img
           data-aos="fade-left"
           data-aos-duration="1000"
-          className="h-[450px]"
+          className="h-[450px] hidden md:block"
           src={steve}
           alt=""
         />

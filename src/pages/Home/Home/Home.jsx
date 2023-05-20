@@ -11,9 +11,9 @@ import useTitle from "../../../hook/useTitle";
 AOS.init();
 
 const Home = () => {
-  useTitle('Home')
+  useTitle("Home");
   return (
-    <div>
+    <div className="overflow-hidden">
       {/* hero */}
       <div
         className="flex items-center justify-center gap-14 bg-primary border-t border-gray-500
@@ -22,9 +22,9 @@ const Home = () => {
         <div
           data-aos="fade-right"
           data-aos-duration="2000"
-          className="text-white space-y-5"
+          className="text-white text-center space-y-5"
         >
-          <h1 className="text-5xl font-custom font-bold leading-[130%]">
+          <h1 className="text-4xl md:text-5xl font-custom font-bold leading-[130%]">
             Embark on an Epic
             <br /> Adventure through <br /> the PixelPals
             <br /> Universe!
@@ -39,7 +39,7 @@ const Home = () => {
           </button>
         </div>
         <div data-aos="fade-up" data-aos-duration="2000">
-          <img className="w-[700px]" src={banner} alt="" />
+          <img className="w-[700px] hidden md:block" src={banner} alt="" />
         </div>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 250">

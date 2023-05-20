@@ -13,18 +13,18 @@ AOS.init();
 const About = () => {
   return (
     <div className="">
-      <div className="flex justify-around items-center">
+      <div className="flex flex-col md:flex-row justify-around items-center">
         <h1
           data-aos="fade-right"
           data-aos-duration="1000"
-          className="text-4xl font-bold font-custom leading-[55px]"
+          className="text-4xl font-bold font-custom leading-[55px] overflow-x-hidden"
         >
           Why We Are Best <br /> In The Market{" "}
         </h1>
         <p
           data-aos="fade-left"
           data-aos-duration="1000"
-          className="font-medium text-gray-500"
+          className="font-medium overflow-x-hidden text-gray-500"
         >
           we're proud to be the best choice for video game toys. <br />
           With an unbeatable selection, top-notch quality, <br /> and

@@ -20,7 +20,7 @@ const Categories = () => {
       </h1>
       <div>
         {/* categories */}
-        <div className="flex justify-center gap-16 font-semibold text-xl">
+        <div className="flex flex-wrap md:flex-nowrap justify-center gap-16 font-semibold text-xl">
           <button
             onClick={() => setActive("retro")}
             className={` transition-all ease-linear duration-200 ${
@@ -49,7 +49,7 @@ const Categories = () => {
         {/* card */}
         <div
           className="container mx-auto bg-orange-50 rounded-xl
-         grid grid-cols-3 gap-8 mt-10 p-10"
+         grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 p-10"
         >
           {toys.map((toy) => (
             <Toy key={toy._id} toy={toy}></Toy>

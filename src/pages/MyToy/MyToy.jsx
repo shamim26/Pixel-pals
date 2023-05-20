@@ -76,7 +76,7 @@ const MyToy = () => {
   };
 
   return (
-    <div className="my-10 w-10/12 mx-auto">
+    <div className="my-10 w-10/12 h-screen mx-auto">
       <h1 className="text-4xl uppercase text-center font-custom font-bold mb-6">
         my Toys
       </h1>

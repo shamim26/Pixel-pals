@@ -29,16 +29,17 @@ const NavBar = () => {
       <div onClick={() => setOpen(!open)} className="md:hidden">
         <span>
           {open ? (
-            <FontAwesomeIcon className="text-4xl" icon={faXmark} />
+            <FontAwesomeIcon className="text-4xl text-white" icon={faXmark} />
           ) : (
-            <FontAwesomeIcon className="text-3xl" icon={faBars} />
+            <FontAwesomeIcon className="text-3xl text-white" icon={faBars} />
           )}
         </span>
       </div>
       <div
         className={`flex items-center flex-col md:flex-row
        bg-white md:bg-transparent gap-6 pb-5 md:pb-0 md:gap-14
-        md:static absolute text-black md:text-white transition-all duration-500 ease-in md:z-auto z-1 md:w-auto w-full left-0 ${
+        md:static absolute text-primary md:text-white transition-all
+         duration-500 ease-in md:z-auto z-[99999] md:w-auto w-full left-0 ${
           open ? "top-20 " : "top-[-490px]"
         } `}
       >
