@@ -37,8 +37,8 @@ const NavBar = () => {
       </div>
       <div
         className={`flex items-center flex-col md:flex-row
-       bg-primary md:bg-transparent gap-6 pb-5 md:pb-0 md:gap-14
-        md:static absolute text-white transition-all duration-500 ease-in md:z-auto z-[-1] md:w-auto w-full left-0 ${
+       bg-white md:bg-transparent gap-6 pb-5 md:pb-0 md:gap-14
+        md:static absolute text-black md:text-white transition-all duration-500 ease-in md:z-auto z-1 md:w-auto w-full left-0 ${
           open ? "top-20 " : "top-[-490px]"
         } `}
       >

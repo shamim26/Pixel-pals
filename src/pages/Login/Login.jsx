@@ -40,7 +40,7 @@ const Login = () => {
 
   return (
     <div
-      className="bg-primary text-white border-t
+      className="bg-primary text-white border-t border-b border-b-white
      border-gray-500
      h-screen pt-20"
     >

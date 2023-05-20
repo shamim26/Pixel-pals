@@ -23,7 +23,7 @@ const AddToy = () => {
       });
   };
   return (
-    <div className="bg-primary h-screen border-t border-t-gray-500 text-white">
+    <div className="bg-primary h-screen border-t border-t-gray-500 border-b border-b-white text-white">
       <h1 className="text-4xl uppercase text-center font-custom font-bold mt-12">
         Add Toys
       </h1>

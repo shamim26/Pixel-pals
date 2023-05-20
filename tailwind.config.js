@@ -10,7 +10,7 @@ export default {
         custom: ["Libre Baskerville", "serif"],
       },
       colors: {
-        primary: "#0a5c49",
+        primary: "#064635",
         secondary: "#F2E3DB",
       },
     },
