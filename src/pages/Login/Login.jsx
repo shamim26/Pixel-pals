@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { authContext } from "../../context/AuthProvider";
 import useTitle from "../../hook/useTitle";
 import { Toaster, toast } from "react-hot-toast";
+import loginBg from '../../assets/game-bg.jpg'
 
 const Login = () => {
   useTitle("Login");
@@ -45,9 +46,18 @@ const Login = () => {
 
   return (
     <div
-      className="bg-primary text-white border-t border-b border-b-white
-     border-gray-500
-     h-screen pt-20"
+      style={{backgroundImage:`url(${loginBg})`}}
+      className="
+      bg-blend-multiply
+      bg-cover
+      bg-no-repeat
+    bg-primary
+    text-white 
+      border-t 
+      border-b 
+    border-b-white
+    border-gray-500
+      h-screen pt-20"
     >
       <h2 className="text-center text-4xl font-custom font-bold leading-[50px]">
         Get more things done <br /> with PixelPals.

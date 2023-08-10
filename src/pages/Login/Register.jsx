@@ -3,9 +3,10 @@ import { Link, NavLink } from "react-router-dom";
 import { authContext } from "../../context/AuthProvider";
 import useTitle from "../../hook/useTitle";
 import { Toaster, toast } from "react-hot-toast";
+import loginBg from "../../assets/game-bg.jpg";
 
 const Register = () => {
-  useTitle('Register')
+  useTitle("Register");
   const { registerUser, addUserInfo } = useContext(authContext);
   const [check, setCheck] = useState("");
 
@@ -21,7 +22,7 @@ const Register = () => {
       .then((result) => {
         const newUser = result.user;
         addUserInfo(name, imageUrl);
-        toast.success('Registration successful.')
+        toast.success("Registration successful.");
         setCheck("");
       })
       .catch((err) => setCheck(err.message));
@@ -30,9 +31,18 @@ const Register = () => {
   return (
     <div>
       <div
-        className="bg-primary text-white border-t border-b border-b-white
-     border-gray-500
-     h-screen pt-20"
+        style={{ backgroundImage: `url(${loginBg})` }}
+        className="
+        bg-blend-multiply
+        bg-cover
+        bg-no-repeat
+        bg-primary 
+        text-white 
+        border-t 
+        border-b 
+        border-b-white
+        border-gray-500
+        h-screen pt-20"
       >
         <h2 className="text-center text-4xl font-custom font-bold leading-[50px]">
           Get more things done <br /> with PixelPals.
@@ -102,7 +112,7 @@ const Register = () => {
           </div>
         </form>
       </div>
-      <Toaster/>
+      <Toaster />
     </div>
   );
 };

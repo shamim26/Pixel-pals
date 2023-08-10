@@ -1,4 +1,3 @@
-import React from "react";
 import img1 from "../../../assets/gallery/gallery(1).jpg";
 import img3 from "../../../assets/gallery/gallery(3).jpg";
 import img4 from "../../../assets/gallery/gallery(4).jpg";
@@ -17,28 +16,28 @@ const Gallery = () => {
         <img
           data-aos="fade-up"
           data-aos-duration="1000"
-          className="w-[300px] h-[300px] rounded-xl"
+          className="w-[300px] h-[300px] rounded-xl object-cover"
           src={img1}
           alt=""
         />
         <img
           data-aos="fade-down"
           data-aos-duration="1000"
-          className="w-[300px] h-[387px] rounded-xl"
+          className="w-[300px] h-[387px] rounded-xl object-cover"
           src="https://i.ebayimg.com/images/g/M90AAOSwoaRijIb2/s-l600.jpg"
           alt=""
         />
         <img
           data-aos="fade-up"
           data-aos-duration="1000"
-          className="w-[300px] h-[300px] rounded-xl"
+          className="w-[300px] h-[300px] rounded-xl object-cover"
           src={img3}
           alt=""
         />
         <img
           data-aos="fade-down"
           data-aos-duration="1000"
-          className="w-[300px] rounded-xl"
+          className="w-[300px] rounded-xl object-cover"
           src={img4}
           alt=""
         />

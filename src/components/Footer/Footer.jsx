@@ -5,6 +5,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -29,13 +30,25 @@ const Footer = () => {
           <button
             className="bg-white absolute text-primary
            font-medium py-[14px] px-6 rounded-full bottom-[8px]
-            right-3 hover:bg-secondary duration-300"
+            right-2 hover:bg-secondary duration-300"
           >
             Subscribe
           </button>
         </div>
       </div>
-      <div className="w-10/12 mx-auto flex flex-col-reverse md:flex-row gap-4 md:gap-0 justify-between items-center mb-10">
+      <div
+        className="
+          w-10/12 
+          mx-auto 
+          flex 
+          flex-col-reverse 
+          md:flex-row 
+          gap-4 
+          md:gap-0 
+          justify-between 
+          items-center 
+          mb-10"
+      >
         <img className="md:w-[200px] hidden md:block" src={logo} alt="" />
         <div className="flex gap-4">
           <FacebookRoundedIcon fontSize="large" />
@@ -45,10 +58,10 @@ const Footer = () => {
           <TwitterIcon fontSize="large" />
         </div>
         <div className="flex gap-8 mr-3">
-          <span>Home</span>
-          <span>Shop</span>
-          <span>New Arrival</span>
-          <span>Toys</span>
+          <Link to="/">Home</Link>
+          <Link>Shop</Link>
+          <Link>New Arrival</Link>
+          <Link to="/all-toys">Toys</Link>
         </div>
       </div>
       <div className="border-t border-t-gray-500 py-9">

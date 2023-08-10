@@ -22,7 +22,7 @@ const Toy = ({ toy }) => {
     >
       <div className="pt-8">
         <img
-          className="w-[250px] h-[200px] mx-auto rounded-xl"
+          className="w-[250px] h-[200px] mx-auto rounded-xl object-cover"
           src={picture}
           alt=""
         />

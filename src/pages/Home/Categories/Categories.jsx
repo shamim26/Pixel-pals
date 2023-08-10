@@ -14,7 +14,7 @@ const Categories = () => {
       });
   }, [active]);
   return (
-    <div className="mt-20">
+    <div className="my-16 container mx-auto w-10/12 py-10">
       <h1 className="text-4xl text-center font-custom font-bold mb-10">
         Category
       </h1>
