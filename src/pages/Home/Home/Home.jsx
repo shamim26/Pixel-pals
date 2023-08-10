@@ -9,6 +9,7 @@ import useTitle from "../../../hook/useTitle";
 import ScrollToTop from "../../../components/ScrollToTop/ScrollToTop";
 import Best from "../Best/Best";
 import Testimonial from "../Testimonial/Testimonial";
+import OurBlog from "../OurBlog/OurBlog";
 AOS.init();
 
 const Home = () => {
@@ -78,6 +79,13 @@ const Home = () => {
       </div>
       <div>
         <Testimonial />
+      </div>
+      <div
+        className="
+        bg-orange-50
+        py-28"
+      >
+        <OurBlog />
       </div>
       <ScrollToTop />
     </div>

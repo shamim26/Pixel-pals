@@ -5,13 +5,18 @@ const Testimonial = () => {
     <div
       style={{ backgroundImage: `url(${testimonial})` }}
       className="
-        px-40
-        h-[30rem]
+        px-8
+        py-10
+        md:py-0
+        md:px-40
+        md:h-[30rem]
         bg-cover
         bg-center
         bg-sky-950
         bg-blend-multiply
         flex
+        flex-col
+        md:flex-row
         justify-center
         items-center
         gap-8

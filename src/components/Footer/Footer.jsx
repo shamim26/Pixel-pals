@@ -1,4 +1,4 @@
-import React from "react";
+
 import logo from "../../assets/logo.png";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import InstagramIcon from "@mui/icons-material/Instagram";

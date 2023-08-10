@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Toy from "./Toy";
 
 
@@ -16,7 +16,7 @@ const Categories = () => {
   return (
     <div className="my-16 container mx-auto w-10/12 py-10">
       <h1 className="text-4xl text-center font-custom font-bold mb-10">
-        Category
+        Popular in Store
       </h1>
       <div>
         {/* categories */}
