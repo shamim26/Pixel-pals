@@ -10,6 +10,7 @@ import ScrollToTop from "../../../components/ScrollToTop/ScrollToTop";
 import Best from "../Best/Best";
 import Testimonial from "../Testimonial/Testimonial";
 import OurBlog from "../OurBlog/OurBlog";
+import Brands from "../Brands/Brands";
 AOS.init();
 
 const Home = () => {
@@ -86,6 +87,9 @@ const Home = () => {
         py-28"
       >
         <OurBlog />
+      </div>
+      <div className="my-12">
+        <Brands />
       </div>
       <ScrollToTop />
     </div>

@@ -1,4 +1,7 @@
 import testimonial from "../../../assets/testimonial.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 const Testimonial = () => {
   return (
@@ -9,7 +12,7 @@ const Testimonial = () => {
         py-10
         md:py-0
         md:px-40
-        md:h-[30rem]
+        md:h-[38rem]
         bg-cover
         bg-center
         bg-sky-950
@@ -23,6 +26,8 @@ const Testimonial = () => {
     "
     >
       <div
+        data-aos="fade-right"
+        data-aos-duration="1000"
         className="
       text-white
         space-y-4
