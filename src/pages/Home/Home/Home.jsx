@@ -8,6 +8,7 @@ import Extra from "../Extra/Extra";
 import useTitle from "../../../hook/useTitle";
 import ScrollToTop from "../../../components/ScrollToTop/ScrollToTop";
 import Best from "../Best/Best";
+import Testimonial from "../Testimonial/Testimonial";
 AOS.init();
 
 const Home = () => {
@@ -60,20 +61,23 @@ const Home = () => {
       <div className="container my-24 mx-auto w-10/12">
         <About />
       </div>
-      {/* categories */}
-      <div className="bg-orange-50">
-        <Categories />
-      </div>
       {/* gallery */}
       <div className="container my-32 mx-auto w-10/12">
         <Gallery />
       </div>
+      {/* categories */}
+      <div className="bg-orange-50">
+        <Categories />
+      </div>
+      <div className="my-20">
+        <Best />
+      </div>
       {/* extra */}
-      <div className="my-28">
+      <div>
         <Extra />
       </div>
-      <div className="my-28">
-        <Best />
+      <div>
+        <Testimonial />
       </div>
       <ScrollToTop />
     </div>
